@@ -7,13 +7,13 @@ import { Document } from './dropsign/dropsign.entity';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }), // ✅ Load env variables globally
+    ConfigModule.forRoot({ isGlobal: true }), 
     // ScheduleModule.forRoot(), 
     DropModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DB_HOST || 'localhost',
-      port: parseInt(process.env.DB_PORT || '5432', 10), // ✅ Ensures it's a number
+      port: parseInt(process.env.DB_PORT || '5432', 10), 
       username: process.env.DB_USER || 'postgres',
       password: process.env.DB_PASS || 'password',
       database: process.env.DB_NAME || 'signing_db',
@@ -26,8 +26,8 @@ import { Document } from './dropsign/dropsign.entity';
 })
 export class AppModule implements OnModuleInit {
   onModuleInit() {
-    console.log('✅ Database connection successfully managed by TypeORM');
+    console.log('Database connection successfully ');
   }
 }
 
-export default AppModule; // ✅ Ensures proper import elsewhere
+export default AppModule; 
